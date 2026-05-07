@@ -1,0 +1,44 @@
+name: CI - Build Only
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Задача: Только проверка стиля кода (без тестов)
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          components: clippy, rustfmt
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+        
+
+      # 🔹 Шаг: Генерация кастомного бейджа
+      - name: Generate Custom Badge
+        if: always()  # Запускать всегда, даже если сборка упала
+        uses: schneegans/dynamic-badges-action@v1.7.0
+        with:
+          auth: ${{ secrets.GIST_SECRET }}
+          gistID: ad700eae77d7761e803d9d80c93745ce  # ← ВСТАВЬТЕ ВАШ GIST ID
+          filename: badge.json
+          label: "🔨 Build"
+          message: ${{ job.status }}  # success / failure / cancelled
+          color: ${{ job.status == 'success' && 'brightgreen' || 'red' }}
+          namedLogo: 'githubactions'
+          style: 'for-the-badge'
