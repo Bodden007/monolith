@@ -1,5 +1,7 @@
 # Monolith
 
+[![Build Status](https://img.shields.io/endpoint?url=https://gist.githubusercontent.com/bugayovdeni/ad700eae77d7761e803d9d80c93745ce/raw/badge.json)](https://github.com/bugayovdeni/monolith/actions)
+
 **Monolith** — desktop-приложение для промышленного мониторинга данных в реальном времени.
 
 Проект построен на **Tauri 2**, где:
