@@ -9,9 +9,9 @@ use tauri_plugin_dialog::{DialogExt, MessageDialogButtons, MessageDialogKind};
 #[allow(dead_code)]
 pub fn agregat(app: &AppHandle) {
     let _version = app.package_info().version.to_string();
-   
-   // TODO Исправить
-   let message = "... в разработке".to_string();
+
+    // TODO Исправить
+    let message = "... в разработке".to_string();
 
     app.dialog()
         .message(message)
@@ -29,11 +29,11 @@ pub fn agregat(app: &AppHandle) {
 /// ### Агрегат ЦA
 ///
 ///
-pub fn agregat_ca(app: &AppHandle) {
+pub fn cmt(app: &AppHandle) {
     let _version = app.package_info().version.to_string();
-   
-   // TODO Исправить
-   let message = "Агрегат ЦA в разработке".to_string();
+
+    // TODO Исправить
+    let message = "Агрегат ЦA в разработке".to_string();
 
     app.dialog()
         .message(message)
@@ -51,11 +51,11 @@ pub fn agregat_ca(app: &AppHandle) {
 /// ### Азотка
 ///
 ///
-pub fn azotka(app: &AppHandle) {
+pub fn nitrogen(app: &AppHandle) {
     let _version = app.package_info().version.to_string();
-   
-   // TODO Исправить
-   let message = "Азотка в разработке".to_string();
+
+    // TODO Исправить
+    let message = "Азотка в разработке".to_string();
 
     app.dialog()
         .message(message)

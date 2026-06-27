@@ -6,11 +6,11 @@ use tauri_plugin_dialog::{DialogExt, MessageDialogButtons, MessageDialogKind};
 /// ### Дополнительные функции
 ///
 ///
-pub fn dop_functions(app: &AppHandle) {
+pub fn sub_functions(app: &AppHandle) {
     let _version = app.package_info().version.to_string();
-   
-   // TODO Исправить
-   let message = "Доп. функция в разработке".to_string();
+
+    // TODO Исправить
+    let message = "Доп. функция в разработке".to_string();
 
     app.dialog()
         .message(message)

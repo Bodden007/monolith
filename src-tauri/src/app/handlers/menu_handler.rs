@@ -1,4 +1,9 @@
-use crate::app::dialogs::{about_app::about as about_app, agregat_menu::{agregat_ca, azotka}, editor_menu::editor, dop_functions_menu::dop_functions};
+use crate::app::dialogs::{
+    about_app::about as about_app,
+    editor_menu::editor,
+    sub_functions_menu::sub_functions,
+    unit_menu::{cmt, nitrogen},
+};
 use crate::app::events::charts::chart_events::{
     AxisMode, AxisModePayload, AxisSettingsOpenPayload,
 };
@@ -114,37 +119,37 @@ pub fn menu_event(app: &App, app_handle: &AppHandle) {
             }
 
             //TODO Агрегат
-            "agregat_CA" => {
+            "unit_cmt" => {
                 //TODO перехватчик "agregat_CA"
-                agregat_ca(&_app_handle);
+                cmt(&_app_handle);
             }
-            "azotka" => {
+            "nitrogen" => {
                 //TODO перехватчик "azotka"
-                azotka(&_app_handle);
+                nitrogen(&_app_handle);
             }
-            
+
             //TODO Редактор
-            "editor_job" =>{
-                 //TODO перехватчик "editor_job" 
-                editor( &_app_handle);
+            "editor_job" => {
+                //TODO перехватчик "editor_job"
+                editor(&_app_handle);
             }
-            "editor_charts" =>{
-                 //TODO перехватчик "editor_charts" 
-                editor( &_app_handle);
+            "editor_charts" => {
+                //TODO перехватчик "editor_charts"
+                editor(&_app_handle);
             }
 
             //TODO Дополнительные функции
             "dop_functions_1" => {
                 //TODO перехватчик "dop_functions_1"
-                dop_functions(&_app_handle);
+                sub_functions(&_app_handle);
             }
             "dop_functions_2" => {
                 //TODO перехватчик "dop_functions_2"
-                dop_functions(&_app_handle);
+                sub_functions(&_app_handle);
             }
             "dop_functions_3" => {
                 //TODO перехватчик "dop_functions_3"
-                dop_functions(&_app_handle);
+                sub_functions(&_app_handle);
             }
 
             "about_app" => {
