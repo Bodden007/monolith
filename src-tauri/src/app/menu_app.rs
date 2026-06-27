@@ -40,7 +40,7 @@ pub fn setup_menu(app: &mut App) -> Result<(), Box<dyn std::error::Error>> {
         .text("editor_charts", "Редактор графиков")
         .build()?;
     //TODO добавление меню доп. функций
-    let dop_functions_menu = SubmenuBuilder::new(app, "Доп. функции")
+    let sub_functions_menu = SubmenuBuilder::new(app, "Доп. функции")
         .text("dop_functions_1", "Функция 1")
         .text("dop_functions_2", "Функция 2")
         .text("dop_functions_3", "Функция 3")
@@ -56,7 +56,7 @@ pub fn setup_menu(app: &mut App) -> Result<(), Box<dyn std::error::Error>> {
             &connection_menu,
             &chart_menu,
             &editor_menu,
-            &dop_functions_menu,
+            &sub_functions_menu,
             &about_menu,
         ])
         .build()?;
