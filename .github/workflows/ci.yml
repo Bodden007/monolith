@@ -25,14 +25,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '24'
           cache: 'npm'
         
 
       # 🔹 Шаг: Генерация кастомного бейджа
       - name: Generate Custom Badge
         if: always()  # Запускать всегда, даже если сборка упала
-        uses: schneegans/dynamic-badges-action@v1.7.0
+        uses: schneegans/dynamic-badges-action@v1.8.0
         with:
           auth: ${{ secrets.GIST_SECRET }}
           gistID: ad700eae77d7761e803d9d80c93745ce  # ← ВСТАВЬТЕ ВАШ GIST ID
